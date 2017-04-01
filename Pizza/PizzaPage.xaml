@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Pizza" x:Class="Pizza.PizzaPage">
+	<StackLayout Margin="24">
+		<Label Text="Rate your pizza!" FontSize="36" VerticalOptions="Center" HorizontalOptions="Center" />
+		<Label Text="Enter pizza place:" Margin="5,10" HorizontalOptions="Center" />
+		<Entry x:Name="place" Placeholder="place name..." Margin="5,10" HorizontalOptions="FillAndExpand" />
+		<Label x:Name="ratingLabel"  Text="Pizza rating: 5" Margin="5,10" HorizontalOptions="Center" />
+		<Stepper x:Name="ratingStepper" Value="5" Minimum="1" Maximum="10" HorizontalOptions="Center" ValueChanged="Handle_ValueChanged" />
+
+		<Button Text="Save rating" Margin="5,40" BorderColor="Red" TextColor="Orange" BorderWidth="1" HorizontalOptions="FillAndExpand" Clicked="Handle_Clicked"/>
+	</StackLayout>
+</ContentPage>
