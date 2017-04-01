@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Microsoft.Azure.Mobile.Analytics;
+using Xamarin.Forms;
 
 namespace Pizza
 {
@@ -22,7 +24,15 @@ namespace Pizza
 
 			var ratingValue = ratingStepper.Value;
 			var message = $"Your rating {ratingValue} for {pizzaPlace} accepted!";
+
+			Analytics.TrackEvent("NewRating", new Dictionary<string, string>() {
+				{"Place", pizzaPlace},
+				{"Rating", ratingValue.ToString()}
+			});
+
 			DisplayAlert("Pizza rating", message, "OK");
+
+
 		}
 	}
 }
