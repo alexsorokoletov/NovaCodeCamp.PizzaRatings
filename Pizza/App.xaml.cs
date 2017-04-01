@@ -1,4 +1,7 @@
 ﻿using Xamarin.Forms;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace Pizza
 {
@@ -13,7 +16,9 @@ namespace Pizza
 
 		protected override void OnStart()
 		{
-			// Handle when your app starts
+			MobileCenter.Start("ios=203ab9c6-03dd-4b7c-bca5-26c6d0bcdec5;" +
+				   "android={Your Android App secret here}",
+				   typeof(Analytics), typeof(Crashes));
 		}
 
 		protected override void OnSleep()
